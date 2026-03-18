@@ -6,8 +6,14 @@ import ContactForm from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "Contact | Spire Group",
   description:
-    "Get in touch with Spire Group about crypto data consulting or research collaboration.",
+    "Start a project with Spire Group and speak directly with Sean Murphy.",
 };
+
+const expectations = [
+  { label: "Response Time", value: "Usually within 24 hours" },
+  { label: "Engagements", value: "Scoping sprints, builds, and advisory support" },
+  { label: "First Conversation", value: "Directly with Sean Murphy" },
+];
 
 export default function ContactPage() {
   return (
@@ -16,11 +22,13 @@ export default function ContactPage() {
         <AnimatedSection immediate>
           <SectionLabel label="Contact" className="mb-6" />
           <h1 className="mb-4 font-display text-4xl font-bold text-white md:text-6xl">
-            Get in touch.
+            Start a project with Spire Group.
           </h1>
-          <p className="max-w-xl text-lg leading-relaxed text-text-secondary">
-            Whether you need help with crypto data infrastructure or want to
-            collaborate on research, we&apos;d like to hear from you.
+          <p className="max-w-2xl text-lg leading-relaxed text-text-secondary">
+            If you&apos;re evaluating an indexer build, rethinking analytics
+            infrastructure, or need senior technical help with a crypto data
+            problem, start here. You&apos;ll speak directly with Sean to scope the
+            work and decide whether it&apos;s a fit.
           </p>
         </AnimatedSection>
       </section>
@@ -40,25 +48,12 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <SectionLabel label="Social" className="mb-3" />
-                <div className="flex flex-col gap-3">
-                  <a
-                    href="https://github.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-text-secondary transition-colors hover:text-white"
-                  >
-                    GitHub
-                  </a>
-                  <a
-                    href="https://twitter.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-text-secondary transition-colors hover:text-white"
-                  >
-                    X / Twitter
-                  </a>
-                </div>
+                <SectionLabel label="Best Fit" className="mb-3" />
+                <p className="max-w-md text-text-secondary">
+                  Teams that need senior help with crypto data architecture,
+                  analytics systems, or a scoped build that ends with clear
+                  ownership on their side.
+                </p>
               </div>
 
               <div>
@@ -66,6 +61,22 @@ export default function ContactPage() {
                 <p className="text-text-secondary">
                   Remote-first. Working across time zones.
                 </p>
+              </div>
+
+              <div className="border-t border-border pt-8">
+                <SectionLabel label="What to Expect" className="mb-5" />
+                <div className="space-y-4">
+                  {expectations.map((item) => (
+                    <div key={item.label}>
+                      <span className="block text-sm font-medium text-white">
+                        {item.label}
+                      </span>
+                      <span className="text-sm text-text-secondary">
+                        {item.value}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </AnimatedSection>

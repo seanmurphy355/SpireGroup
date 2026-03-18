@@ -16,7 +16,7 @@ interface ButtonProps {
 }
 
 const baseStyles =
-  "inline-flex items-center justify-center px-7 py-3 text-sm font-mono uppercase tracking-widest cursor-pointer rounded-[2px] transition-all duration-500 ease-in-out hover:rounded-[20px]";
+  "inline-flex items-center justify-center px-7 py-3 text-sm uppercase tracking-wider cursor-pointer rounded-[3px] transition-all duration-300 ease-out hover:rounded-[12px]";
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary: "bg-white text-black hover:bg-gray-200",

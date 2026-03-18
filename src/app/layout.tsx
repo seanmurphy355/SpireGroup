@@ -23,9 +23,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Spire Group | Crypto Data Consulting & Research",
+  title: "Spire Group | Crypto Data Infrastructure & Public Goods",
   description:
-    "Spire Group specializes in crypto data consulting, helping customers implement data solutions and own their data. An experimental group producing crypto writing and open source projects.",
+    "Spire Group is a dual-mission crypto data firm led by Sean Murphy, combining client services with research and open source public goods.",
 };
 
 export default function RootLayout({
@@ -34,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body
         className={`${syne.variable} ${outfit.variable} ${jetbrainsMono.variable}`}
       >

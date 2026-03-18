@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 type TooltipPosition = "top" | "bottom" | "left" | "right";
@@ -54,18 +54,29 @@ const motionVariants = {
 export default function Tooltip({
   content,
   position = "top",
-  delay = 0,
+  delay = 200,
   children,
 }: TooltipProps) {
   const [visible, setVisible] = useState(false);
-  let timeout: NodeJS.Timeout;
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
   const show = () => {
-    timeout = setTimeout(() => setVisible(true), delay);
+    timeoutRef.current = setTimeout(() => setVisible(true), delay);
   };
 
   const hide = () => {
-    clearTimeout(timeout);
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
     setVisible(false);
   };
 
@@ -79,7 +90,7 @@ export default function Tooltip({
       <AnimatePresence>
         {visible && (
           <motion.span
-            className={`absolute z-50 whitespace-nowrap bg-bg-elevated px-3 py-1.5 text-xs font-mono text-text-primary pointer-events-none ${positionStyles[position]}`}
+            className={`absolute z-50 whitespace-nowrap rounded-sm bg-bg-elevated px-3 py-1.5 text-xs text-text-primary pointer-events-none ${positionStyles[position]}`}
             {...motionVariants[position]}
             transition={{ duration: 0.15 }}
           >

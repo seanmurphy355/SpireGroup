@@ -26,12 +26,12 @@ export default function Card({
 
   const cardContent = (
     <motion.div
-      className={`h-full border p-6 transition-colors flex flex-col ${light ? lightStyles : darkStyles} ${className}`}
+      className={`h-full border p-8 transition-colors flex flex-col ${light ? lightStyles : darkStyles} ${className}`}
       whileHover={{
-        y: -4,
+        y: -2,
         borderColor: hoverBorder,
       }}
-      transition={{ duration: 0.25, ease: "easeOut" }}
+      transition={{ duration: 0.2, ease: "easeOut" }}
     >
       {children}
     </motion.div>

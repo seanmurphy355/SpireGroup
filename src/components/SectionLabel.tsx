@@ -9,9 +9,9 @@ export default function SectionLabel({
 }: SectionLabelProps) {
   return (
     <span
-      className={`inline-block font-mono text-xs uppercase tracking-[0.2em] text-text-secondary ${className}`}
+      className={`inline-block text-xs uppercase tracking-[0.2em] text-text-muted ${className}`}
     >
-      [{label}]
+      {label}
     </span>
   );
 }

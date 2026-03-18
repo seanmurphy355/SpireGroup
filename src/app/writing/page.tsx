@@ -1,59 +1,39 @@
 import type { Metadata } from "next";
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionLabel from "@/components/SectionLabel";
+import Button from "@/components/Button";
 import Card from "@/components/Card";
 
 export const metadata: Metadata = {
   title: "Writing | Spire Group",
   description:
-    "Research and analysis on crypto data infrastructure, protocol analysis, and the evolving data landscape.",
+    "Research and technical writing from Spire Group, part of the firm's public-goods mission in crypto data.",
 };
 
-const articles = [
+const pillars = [
   {
-    title: "The Case for Owning Your Crypto Data Infrastructure",
-    date: "2026-03-10",
-    excerpt:
-      "Why relying on third-party data providers creates hidden risk, and how teams can take back control with self-hosted indexing and pipeline architecture.",
-    tag: "Infrastructure",
+    title: "Why publish",
+    description:
+      "Research is a way to turn repeated operational lessons into clearer shared understanding for the ecosystem.",
   },
   {
-    title: "On-Chain Analytics Beyond the Dashboard",
-    date: "2026-02-22",
-    excerpt:
-      "Dashboards are a starting point, not a destination. How to build analytical workflows that surface signal from raw blockchain data.",
-    tag: "Analytics",
+    title: "What it looks like",
+    description:
+      "Technical notes, analytical framing, system design thinking, and longer-form arguments about how crypto data work should be done.",
   },
   {
-    title: "Indexer Architectures: A Comparative Analysis",
-    date: "2026-01-15",
-    excerpt:
-      "Comparing SubGraph, SubSquid, Ponder, and custom solutions. Trade-offs in latency, reliability, and maintenance burden.",
-    tag: "Research",
-  },
-  {
-    title: "Data Ownership as a Competitive Advantage",
-    date: "2025-12-08",
-    excerpt:
-      "Organizations that control their data pipelines move faster, spend less, and build better products. Exploring the economics of self-sovereignty.",
-    tag: "Strategy",
-  },
-  {
-    title: "Building Real-Time Crypto Data Pipelines with Rust",
-    date: "2025-11-20",
-    excerpt:
-      "A technical deep-dive into building high-throughput blockchain data pipelines using Rust, covering architecture decisions and performance benchmarks.",
-    tag: "Engineering",
+    title: "Why it matters",
+    description:
+      "Public writing helps make infrastructure decisions more legible, not just for clients, but for teams across the space.",
   },
 ];
 
-function formatDate(dateStr: string) {
-  return new Date(dateStr + "T00:00:00").toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-}
+const topics = [
+  "Indexer architecture and ownership trade-offs",
+  "Analytics workflows for protocols and funds",
+  "Technical operating models for crypto data teams",
+  "Machine learning applications around messy market data",
+];
 
 export default function WritingPage() {
   return (
@@ -61,50 +41,68 @@ export default function WritingPage() {
       <section className="mx-auto max-w-7xl px-6">
         <AnimatedSection immediate>
           <SectionLabel label="Writing" className="mb-6" />
-          <h1 className="mb-4 font-display text-4xl font-bold text-white md:text-6xl">
-            Research &amp; analysis.
+          <h1 className="mb-4 max-w-4xl font-display text-4xl font-bold text-white md:text-6xl">
+            Research as public infrastructure.
           </h1>
-          <p className="max-w-xl text-lg leading-relaxed text-text-secondary">
-            Long-form writing on crypto data infrastructure, protocol analysis,
-            and the evolving data landscape.
+          <p className="max-w-3xl text-lg leading-relaxed text-text-secondary">
+            Writing is part of Spire Group&apos;s public-goods mission. The goal is
+            to publish research and technical thinking that make crypto data
+            work easier to reason about, not just easier to sell.
           </p>
         </AnimatedSection>
       </section>
 
-      <section className="mx-auto max-w-4xl px-6 py-24">
-        <AnimatedSection>
-          <SectionLabel label="Latest" className="mb-8" />
-        </AnimatedSection>
-
-        <div className="flex flex-col gap-2">
-          {articles.map((article, i) => (
-            <AnimatedSection key={article.title} delay={i * 0.08}>
-              <Card className="group">
-                <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                  <div className="flex-1">
-                    <div className="mb-2 flex items-center gap-3">
-                      <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-text-muted">
-                        {article.tag}
-                      </span>
-                      <span className="font-mono text-[10px] text-text-muted">
-                        {formatDate(article.date)}
-                      </span>
-                    </div>
-                    <h3 className="mb-2 font-display text-lg font-semibold text-white">
-                      {article.title}
-                    </h3>
-                    <p className="text-sm leading-relaxed text-text-secondary">
-                      {article.excerpt}
-                    </p>
-                  </div>
-                  <span className="shrink-0 font-mono text-xs text-text-muted transition-colors group-hover:text-white sm:ml-6 sm:mt-6">
-                    Read &rarr;
-                  </span>
-                </div>
+      <section className="mx-auto max-w-7xl px-6 py-24">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          {pillars.map((pillar, i) => (
+            <AnimatedSection key={pillar.title} delay={i * 0.08}>
+              <Card className="h-full p-7">
+                <h2 className="mb-3 font-display text-xl font-semibold text-white">
+                  {pillar.title}
+                </h2>
+                <p className="text-sm leading-relaxed text-text-secondary">
+                  {pillar.description}
+                </p>
               </Card>
             </AnimatedSection>
           ))}
         </div>
+      </section>
+
+      <section className="section-alt py-24">
+        <div className="mx-auto max-w-5xl px-6">
+          <AnimatedSection>
+            <SectionLabel label="Focus Areas" className="mb-8" />
+          </AnimatedSection>
+
+          <div className="space-y-6">
+            {topics.map((topic, i) => (
+              <AnimatedSection key={topic} delay={i * 0.08}>
+                <div className="border-t border-border pt-6">
+                  <h2 className="font-display text-xl font-semibold text-white">
+                    {topic}
+                  </h2>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-5xl px-6 py-24">
+        <AnimatedSection>
+          <div className="border border-border bg-bg-secondary p-8">
+            <h2 className="mb-3 font-display text-2xl font-semibold text-white">
+              Need a sharper frame for a messy problem?
+            </h2>
+            <p className="mb-6 max-w-2xl text-sm leading-relaxed text-text-secondary">
+              The same research instinct that drives public writing also shows
+              up in client work. If your team needs help making sense of a hard
+              infrastructure or analytics question, start there.
+            </p>
+            <Button href="/contact">Start a Conversation</Button>
+          </div>
+        </AnimatedSection>
       </section>
     </div>
   );

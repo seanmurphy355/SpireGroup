@@ -1,97 +1,111 @@
 import type { Metadata } from "next";
-import HomeHero from "@/components/HomeHero";
+import VideoScrollHero from "@/components/VideoScrollHero";
 import Button from "@/components/Button";
 import Card from "@/components/Card";
-import SectionLabel from "@/components/SectionLabel";
 import AnimatedSection from "@/components/AnimatedSection";
-import TypewriterText from "@/components/TypewriterText";
+
+const services = [
+  {
+    title: "Indexer & Pipeline Architecture",
+    description:
+      "Design and implementation for on-chain and off-chain data flows that your team can own after handoff.",
+  },
+  {
+    title: "Analytics & Research Systems",
+    description:
+      "Metrics layers, dashboards, and internal research tooling tailored to investment, protocol, or data teams.",
+  },
+  {
+    title: "Technical Advisory",
+    description:
+      "Scoped architecture reviews, build plans, and senior technical input for teams making infrastructure decisions.",
+  },
+  {
+    title: "Ownership Transfer",
+    description:
+      "Documentation, implementation support, and clear handoff so your team can run the stack without a permanent dependency.",
+  },
+];
+
+const publicGoods = [
+  {
+    title: "Research",
+    description:
+      "Analysis, technical writing, and ecosystem framing intended to turn operational lessons into shared understanding.",
+    href: "/writing",
+    cta: "Explore Writing",
+  },
+  {
+    title: "Open Source",
+    description:
+      "Reusable tooling, reference patterns, and practical infrastructure ideas that can lower duplicated effort across teams.",
+    href: "/open-source",
+    cta: "Explore Open Source",
+  },
+];
 
 const steps = [
   {
     num: "01",
     title: "Assess",
     description:
-      "We audit your existing data stack, identify gaps, and map out the on-chain and off-chain sources that matter to your business.",
+      "We review the current stack, identify where the bottlenecks or blind spots are, and define a path that fits your team.",
   },
   {
     num: "02",
     title: "Build",
     description:
-      "We design and implement pipelines, indexers, and analytics layers tailored to your protocol or organization.",
+      "Spire Group scopes and ships the highest-leverage parts of the system, from indexers to analytics workflows.",
   },
   {
     num: "03",
-    title: "Own",
+    title: "Transfer",
     description:
-      "You walk away with full ownership of your infrastructure, documentation, and the knowledge to maintain it independently.",
+      "You leave with a system your team understands, documentation that is usable, and a cleaner long-term operating model.",
   },
 ];
 
 export const metadata: Metadata = {
-  title: "Spire Group | Crypto Data Consulting & Research",
+  title: "Spire Group | Crypto Data Infrastructure & Public Goods",
+  description:
+    "Spire Group is a dual-mission crypto data firm led by Sean Murphy, combining client services with research and open source public goods.",
 };
 
 export default function Home() {
   return (
     <>
-      <HomeHero />
+      <VideoScrollHero />
 
       <section className="section-alt py-24">
         <div className="mx-auto max-w-7xl px-6">
-          <AnimatedSection immediate>
-            <TypewriterText text="What We Do" className="mb-12" />
+          <AnimatedSection>
+            <span className="mb-4 block text-xs uppercase tracking-[0.2em] text-text-muted">
+              Client Work
+            </span>
+            <h2 className="mb-6 font-display text-3xl font-bold md:text-4xl">
+              Infrastructure and analytics for teams that need to own the stack.
+            </h2>
+            <p className="mb-16 max-w-3xl text-base leading-relaxed text-text-secondary">
+              Spire Group works with protocols, funds, and data teams that need
+              stronger infrastructure without committing to a bloated vendor
+              relationship. The focus is practical: build the right system,
+              ship it cleanly, and leave you in control.
+            </p>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-            <AnimatedSection delay={0.1}>
-              <Card href="/about">
-                <SectionLabel label="About" className="mb-4" />
-                <h3 className="mb-2 font-display text-xl font-semibold">
-                  Data Consulting
-                </h3>
-                <p className="flex-1 text-sm leading-relaxed text-text-secondary">
-                  We specialize in helping organizations implement crypto data
-                  solutions, build pipelines, and take ownership of their data
-                  infrastructure.
-                </p>
-                <span className="mt-auto pt-4 inline-block font-mono text-xs text-text-muted">
-                  Learn more &rarr;
-                </span>
-              </Card>
-            </AnimatedSection>
-
-            <AnimatedSection delay={0.2}>
-              <Card href="/writing">
-                <SectionLabel label="Writing" className="mb-4" />
-                <h3 className="mb-2 font-display text-xl font-semibold">
-                  Research &amp; Analysis
-                </h3>
-                <p className="flex-1 text-sm leading-relaxed text-text-secondary">
-                  Long-form writing on crypto data, protocol analysis, on-chain
-                  metrics, and the evolving data landscape.
-                </p>
-                <span className="mt-auto pt-4 inline-block font-mono text-xs text-text-muted">
-                  Read more &rarr;
-                </span>
-              </Card>
-            </AnimatedSection>
-
-            <AnimatedSection delay={0.3}>
-              <Card href="/open-source">
-                <SectionLabel label="Open Source" className="mb-4" />
-                <h3 className="mb-2 font-display text-xl font-semibold">
-                  Public Goods
-                </h3>
-                <p className="flex-1 text-sm leading-relaxed text-text-secondary">
-                  Open source tools and frameworks built for the crypto data
-                  community. Building in public, advancing the frontier for
-                  everyone.
-                </p>
-                <span className="mt-auto pt-4 inline-block font-mono text-xs text-text-muted">
-                  Explore &rarr;
-                </span>
-              </Card>
-            </AnimatedSection>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {services.map((service, i) => (
+              <AnimatedSection key={service.title} delay={i * 0.1}>
+                <Card className="h-full p-7">
+                  <h3 className="mb-3 font-display text-lg font-semibold text-white">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-text-secondary">
+                    {service.description}
+                  </p>
+                </Card>
+              </AnimatedSection>
+            ))}
           </div>
         </div>
       </section>
@@ -99,7 +113,45 @@ export default function Home() {
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-6">
           <AnimatedSection>
-            <SectionLabel label="Process" className="mb-4" />
+            <span className="mb-4 block text-xs uppercase tracking-[0.2em] text-text-muted">
+              Public Goods
+            </span>
+            <h2 className="mb-6 font-display text-3xl font-bold md:text-4xl">
+              Research and open source are part of the product.
+            </h2>
+            <p className="mb-16 max-w-3xl text-base leading-relaxed text-text-secondary">
+              Spire Group is not only here to deliver client work. The firm is
+              also meant to contribute analysis, language, and reusable tooling
+              back to the crypto data ecosystem as that work matures.
+            </p>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {publicGoods.map((item, i) => (
+              <AnimatedSection key={item.title} delay={i * 0.1}>
+                <Card href={item.href} className="h-full p-7">
+                  <h3 className="mb-3 font-display text-xl font-semibold text-white">
+                    {item.title}
+                  </h3>
+                  <p className="flex-1 text-sm leading-relaxed text-text-secondary">
+                    {item.description}
+                  </p>
+                  <span className="mt-6 inline-block text-xs text-text-muted">
+                    {item.cta} &rarr;
+                  </span>
+                </Card>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-alt py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <AnimatedSection>
+            <span className="mb-4 block text-xs uppercase tracking-[0.2em] text-text-muted">
+              Engagement Model
+            </span>
             <h2 className="mb-16 font-display text-3xl font-bold md:text-4xl">
               How We Work
             </h2>
@@ -108,9 +160,9 @@ export default function Home() {
           <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
             {steps.map((step, i) => (
               <AnimatedSection key={step.num} delay={i * 0.15}>
-                <div>
-                  <span className="mb-4 block font-mono text-3xl font-bold text-text-muted">
-                    {step.num}
+                <div className="border-l-2 border-border pl-6">
+                  <span className="mb-2 block text-xs uppercase tracking-[0.15em] text-text-muted">
+                    Step {step.num}
                   </span>
                   <h3 className="mb-3 font-display text-xl font-semibold text-white">
                     {step.title}
@@ -125,19 +177,19 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-alt py-24">
+      <section className="py-24">
         <div className="mx-auto max-w-7xl px-6 text-center">
           <AnimatedSection>
-            <SectionLabel label="Connect" className="mb-4" />
             <h2 className="mb-6 font-display text-3xl font-bold md:text-4xl">
-              Ready to Own Your Data?
+              Start a project with Spire Group
             </h2>
             <p className="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-text-secondary">
-              Whether you need a full data infrastructure build-out, on-chain
-              analytics, or a custom research engagement &mdash; we&apos;re
-              ready to help.
+              You&apos;ll speak directly with Sean to scope the work, define the
+              outcome, and decide whether the engagement is a fit.
             </p>
-            <Button href="/contact">Get in Touch</Button>
+            <Button href="/contact" variant="accent">
+              Start a Project
+            </Button>
           </AnimatedSection>
         </div>
       </section>
