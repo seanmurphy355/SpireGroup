@@ -6,13 +6,13 @@ import ContactForm from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "Contact | Spire Group",
   description:
-    "Start a project with Spire Group and speak directly with Sean Murphy.",
+    "Start a project with Spire Group. Speak directly with the founder.",
 };
 
 const expectations = [
   { label: "Response Time", value: "Usually within 24 hours" },
   { label: "Engagements", value: "Scoping sprints, builds, and advisory support" },
-  { label: "First Conversation", value: "Directly with Sean Murphy" },
+  { label: "First Conversation", value: "Directly with the founder" },
 ];
 
 export default function ContactPage() {
@@ -27,8 +27,8 @@ export default function ContactPage() {
           <p className="max-w-2xl text-lg leading-relaxed text-text-secondary">
             If you&apos;re evaluating an indexer build, rethinking analytics
             infrastructure, or need senior technical help with a crypto data
-            problem, start here. You&apos;ll speak directly with Sean to scope the
-            work and decide whether it&apos;s a fit.
+            problem, start here. You&apos;ll speak directly with the founder to
+            scope the work and decide whether it&apos;s a fit.
           </p>
         </AnimatedSection>
       </section>
@@ -40,10 +40,10 @@ export default function ContactPage() {
               <div>
                 <SectionLabel label="Email" className="mb-3" />
                 <a
-                  href="mailto:hello@spiregroup.xyz"
+                  href="mailto:spiregroupservices@gmail.com"
                   className="text-lg text-white transition-colors hover:text-text-secondary"
                 >
-                  hello@spiregroup.xyz
+                  spiregroupservices@gmail.com
                 </a>
               </div>
 

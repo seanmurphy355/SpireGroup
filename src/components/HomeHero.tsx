@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import Button from "./Button";
 
 const proofPoints = [
-  "VP of Engineering at The Tie",
-  "Graduate studies in machine learning at UT Austin",
+  "Data pipeline architecture",
+  "On-chain analytics",
   "Client work + public goods for the crypto ecosystem",
 ];
 
@@ -41,9 +41,9 @@ export default function HomeHero() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mb-4 max-w-3xl text-center text-lg leading-relaxed text-text-secondary"
         >
-          Led by Sean Murphy, Spire Group helps teams build indexers, analytics
-          systems, and research tooling while contributing open analysis and
-          reusable infrastructure patterns back to crypto.
+          Spire Group helps teams build indexers, analytics systems, and
+          research tooling while contributing open analysis and reusable
+          infrastructure patterns back to crypto.
         </motion.p>
 
         <motion.p

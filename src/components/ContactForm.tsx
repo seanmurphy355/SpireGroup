@@ -41,7 +41,7 @@ export default function ContactForm() {
               Project note sent.
             </h3>
             <p className="text-text-secondary">
-              Sean will review it and follow up if it looks like a fit.
+              We&apos;ll review it and follow up if it looks like a fit.
             </p>
           </div>
         </div>

@@ -68,7 +68,7 @@ const steps = [
 export const metadata: Metadata = {
   title: "Spire Group | Crypto Data Infrastructure & Public Goods",
   description:
-    "Spire Group is a dual-mission crypto data firm led by Sean Murphy, combining client services with research and open source public goods.",
+    "Spire Group is a dual-mission crypto data firm combining client services with research and open source public goods.",
 };
 
 export default function Home() {
@@ -184,8 +184,8 @@ export default function Home() {
               Start a project with Spire Group
             </h2>
             <p className="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-text-secondary">
-              You&apos;ll speak directly with Sean to scope the work, define the
-              outcome, and decide whether the engagement is a fit.
+              You&apos;ll speak directly with the founder to scope the work,
+              define the outcome, and decide whether the engagement is a fit.
             </p>
             <Button href="/contact" variant="accent">
               Start a Project

@@ -3,12 +3,12 @@ import AnimatedSection from "@/components/AnimatedSection";
 import SectionLabel from "@/components/SectionLabel";
 import Button from "@/components/Button";
 import Card from "@/components/Card";
-import TooltipLink from "@/components/TooltipLink";
+
 
 export const metadata: Metadata = {
   title: "About | Spire Group",
   description:
-    "Spire Group is a dual-mission crypto data firm led by Sean Murphy, combining client work with research and open source public goods.",
+    "Spire Group is a dual-mission crypto data firm combining client work with research and open source public goods.",
 };
 
 const principles = [
@@ -80,57 +80,31 @@ export default function AboutPage() {
           <AnimatedSection delay={0.15}>
             <SectionLabel label="Founder" className="mb-6" />
             <h2 className="mb-5 font-display text-2xl font-semibold text-white">
-              Sean Murphy
+              Leadership
             </h2>
             <div className="mb-6 flex flex-wrap items-center gap-3">
               <span className="rounded-full border border-border px-3 py-1 text-xs tracking-wide text-text-secondary">
-                VP of Engineering at The Tie
+                Engineering Leadership
               </span>
               <span className="rounded-full border border-border px-3 py-1 text-xs tracking-wide text-text-secondary">
-                Graduate Studies in ML, UT Austin
+                Machine Learning
               </span>
               <span className="rounded-full border border-border px-3 py-1 text-xs tracking-wide text-text-secondary">
-                Also known as ZeroSipher
+                Crypto Data Infrastructure
               </span>
             </div>
             <div className="space-y-4 text-text-secondary leading-relaxed">
               <p>
-                Sean leads Spire Group with an operator&apos;s lens shaped by
-                building crypto data systems at scale. His work spans analytics
-                infrastructure, research workflows, and applied machine
-                learning.
+                Spire Group is led by an engineering operator with experience
+                building crypto data systems at scale. The founder&apos;s work spans
+                analytics infrastructure, research workflows, and applied
+                machine learning.
               </p>
               <p>
-                Before Spire, he worked with smaller data companies and select
-                institutional consulting engagements, including work with
-                Alvarez &amp; Marsal.
+                Before Spire, the founder worked across data companies and
+                select institutional consulting engagements in both crypto
+                and traditional finance.
               </p>
-            </div>
-            <div className="mt-5 flex gap-4">
-              <TooltipLink
-                href="https://www.linkedin.com/in/seanmurphyor/"
-                tooltip="Connect on LinkedIn"
-                external
-                className="text-xs text-text-muted transition-colors hover:text-white"
-              >
-                LinkedIn
-              </TooltipLink>
-              <TooltipLink
-                href="https://github.com/spire-group"
-                tooltip="View repositories"
-                external
-                className="text-xs text-text-muted transition-colors hover:text-white"
-              >
-                GitHub
-              </TooltipLink>
-              <TooltipLink
-                href="https://x.com/spiregroup"
-                tooltip="Follow on X"
-                external
-                className="text-xs text-text-muted transition-colors hover:text-white"
-              >
-                X
-              </TooltipLink>
             </div>
           </AnimatedSection>
         </div>
@@ -208,8 +182,8 @@ export default function AboutPage() {
                 Want to see if Spire Group is the right fit?
               </h2>
               <p className="text-text-secondary">
-                Start with a direct conversation with Sean about the problem,
-                scope, and where your needs intersect with the firm&apos;s
+                Start with a direct conversation about the problem, scope,
+                and where your needs intersect with the firm&apos;s
                 strengths.
               </p>
             </div>

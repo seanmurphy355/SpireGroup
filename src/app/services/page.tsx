@@ -156,7 +156,7 @@ export default function ServicesPage() {
                 Need help deciding where to start?
               </h2>
               <p className="max-w-2xl text-text-secondary">
-                Start with the problem, not the pitch. Sean will help you decide
+                Start with the problem, not the pitch. We&apos;ll help you decide
                 whether this is best handled as a sprint, a build, or a simple
                 advisory conversation.
               </p>

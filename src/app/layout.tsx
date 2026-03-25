@@ -25,7 +25,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Spire Group | Crypto Data Infrastructure & Public Goods",
   description:
-    "Spire Group is a dual-mission crypto data firm led by Sean Murphy, combining client services with research and open source public goods.",
+    "Spire Group is a dual-mission crypto data firm combining client services with research and open source public goods.",
 };
 
 export default function RootLayout({

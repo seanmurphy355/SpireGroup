@@ -25,15 +25,15 @@ export default function Footer() {
               Crypto data consulting and public goods for the ecosystem.
             </p>
             <p className="mb-6 max-w-sm text-sm leading-relaxed text-text-secondary">
-              Led by Sean Murphy today, with the firm designed to grow
-              deliberately over time through client work, research, and open
+              Founder-led today, with the firm designed to grow deliberately
+              over time through client work, research, and open
               infrastructure.
             </p>
             <a
-              href="mailto:hello@spiregroup.xyz"
+              href="mailto:spiregroupservices@gmail.com"
               className="text-sm text-text-secondary transition-colors hover:text-white"
             >
-              hello@spiregroup.xyz
+              spiregroupservices@gmail.com
             </a>
           </div>
 
@@ -60,36 +60,6 @@ export default function Footer() {
           <p className="text-xs text-text-muted">
             &copy; {new Date().getFullYear()} Spire Group. All rights reserved.
           </p>
-          <div className="flex items-center gap-4">
-            <span className="text-xs uppercase tracking-[0.16em] text-text-muted">
-              Sean Murphy / ZeroSipher
-            </span>
-            <span className="h-3 w-px bg-border" />
-            <a
-              href="https://www.linkedin.com/in/seanmurphyor/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs text-text-muted transition-colors hover:text-white"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="https://github.com/spire-group"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs text-text-muted transition-colors hover:text-white"
-            >
-              GitHub
-            </a>
-            <a
-              href="https://x.com/spiregroup"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs text-text-muted transition-colors hover:text-white"
-            >
-              X
-            </a>
-          </div>
         </div>
       </div>
     </footer>
